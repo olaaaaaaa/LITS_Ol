@@ -1,0 +1,63 @@
+<!DOCTYPE htlm>
+<html>
+  <head>
+
+<table style="width:662px">
+  <tr>
+    <th>A</th> 
+    <th>B</th> 
+    <th>C</th>
+    <th>D</th>
+    <th>E</th> 
+    <th>F</th>
+    <th>G</th> 
+    <th>H</th>
+  </tr>
+</table>
+
+  
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+
+    <style>
+      .skvr {
+        height: 80px;
+        width: 80px;
+        border: 1px solid grey;
+        float: left;
+      }
+
+      #chess-cont {
+        border: 1px solid black;
+        width: calc(82px*8);
+      }
+
+      .clearfix {
+        clear: both;
+        float: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chess-cont">
+    </div>
+    <script>
+
+      function appendEl(color){
+        var el = `<div class="skvr" style="background-color: ${color}"></div>`;
+        $('#chess-cont').append(el);
+      }
+
+      for(var i = 1; i <= 8; i++){
+        for(var y = 1; y <= 8; y++){
+          var color = (i+y)%2 == 0 ? 'black' : 'white';
+          appendEl(color);
+        }
+      }
+
+      $('#chess-cont').append('<div class="clearfix"></div>');
+    </script>
+  </body>
+</html>
